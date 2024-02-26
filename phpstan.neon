@@ -1,0 +1,9 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    reportUnmatchedIgnoredErrors: false
+    paths:
+        - src
+        - tests
+    level: 8
