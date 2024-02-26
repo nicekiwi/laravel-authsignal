@@ -24,28 +24,28 @@ class MFA
         return $this->authsignal;
     }
 
-    public function track(...$args): array
+    public function track(string $userId, string $action, Array $payload): array
     {
-        return $this->authsignal::track(...$args);
+        return $this->authsignal::track($userId, $action, $payload);
     }
 
-    public function validateChallenge(...$args): array
+    public function validateChallenge(string $token, ?string $userId = null): array
     {
-        return $this->authsignal::validateChallenge(...$args);
+        return $this->authsignal::validateChallenge($token, $userId);
     }
 
-    public function getAction(...$args): array
+    public function getAction(string $userId, string $action, string $idempotencyKey): array
     {
-        return $this->authsignal::getAction(...$args);
+        return $this->authsignal::getAction($userId, $action, $idempotencyKey);
     }
 
-    public function getUser(...$args): array
+    public function getUser(string $userId, string $redirectUrl = null): array
     {
-        return $this->authsignal::getUser(...$args);
+        return $this->authsignal::getUser($userId, $redirectUrl);
     }
 
-    public function enrollVerifiedAuthenticator(...$args): array
+    public function enrollVerifiedAuthenticator(string $userId, Array $authenticator): array
     {
-        return $this->authsignal::enrollVerifiedAuthenticator(...$args);
+        return $this->authsignal::enrollVerifiedAuthenticator($userId, $authenticator);
     }
 }
